@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="script/jquery.js"></script>
+    <script src="script/jquery.maskedinput.min.js"></script>
+    <script src="script/jquery.maskedinput.js"></script>
+    <title>Обо мне</title>
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="content__item">
+        <div class="info">
+          <div class="info__img">
+            <img src="img/photo.png" alt="" />
+          </div>
+          <div class="info__data">
+            <h1 id="name">Константин Кадочников</h1>
+            <div class="info__row">
+              <span class="info__label">Адрес:</span
+              ><span class="info__text">г. Миасс</span>
+            </div>
+            <div class="info__row">
+              <span class="info__label">Опыт работы:</span
+              ><span class="info__text">10 лет</span><br />
+            </div>
+            <div class="info__row">
+              <span class="info__label">Телефон:</span
+              ><span class="info__text info__text--nowrap" id="phone"
+                >+7 (950) 737 19 38</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content__item">
+        <h2>Знание языков:</h2>
+        <table>
+          <tr>
+            <th></th>
+            <th>Java</th>
+            <th>JavaScript</th>
+            <th>C++</th>
+            <th>C#</th>
+            <th>Swift</th>
+          </tr>
+          <tr>
+            <th>Отличное владение</th>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+          </tr>
+          <tr>
+            <th>Хорошее владение</th>
+            <td>Да</td>
+            <td>Нет</td>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+          </tr>
+          <tr>
+            <th>Среднее владение</th>
+            <td>Да</td>
+            <td>Нет</td>
+            <td>Нет</td>
+            <td>Нет</td>
+            <td>Да</td>
+          </tr>
+          <tr>
+            <th>Плохое владение</th>
+            <td>Да</td>
+            <td>Нет</td>
+            <td>Нет</td>
+            <td>Да</td>
+            <td>Да</td>
+          </tr>
+        </table>
+      </div>
+      <div class="content__item">
+        <div class="row">
+          <div class="row__item">
+            <p>Телефон</p>
+            <input
+              id="phone-input"
+              type="tel"
+              placeholder="+7 (___) ___-__-__"
+            />
+            <script>
+              $(function () {
+                $('#phone-input').mask('+7 (999) 999-99-99', {
+                  completed: function () {
+                    let phoneInput = document.getElementById('phone-input')
+                    document.getElementById('phone').innerHTML =
+                      phoneInput.value
+                  }
+                })
+              })
+            </script>
+          </div>
+          <div class="row__item">
+            <p>Имя</p>
+            <input id="name-input" type="text" />
+            <script>
+              let nameInput = document.getElementById('name-input')
+              nameInput.oninput = function () {
+                document.getElementById('name').innerHTML = nameInput.value
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="content__item">
+        <h2 id="show-more">Кликните сюда, чтобы узнать меня подробнее</h2>
+
+        <p class="hidden" id="about-me">
+          Мое имя самое распространенное у русского народа и очень часто
+          встречается в сказках. Я - Иван. Мама ласково называет Ванюшей, а
+          одноклассники - Ваня. Совсем недавно мне исполнилось 12 лет. Как
+          говорят взрослые, наступил переходный возраст. Однако я совсем не
+          замечаю особых перемен в своем поведении. <br />
+
+          Мне очень нравится учиться в школе. Самым любимым и интересным
+          предметом является русский язык и литература. Увлечение книгами у меня
+          началось с самого раннего детства. Вначале мне часто читала мама
+          сказки на ночь перед сном, потом дедушка рассказывал мне интересные
+          моменты из произведений и потихоньку учил читать. В 1 классе к
+          большому удивлению моей учительницы я знал практически все сказки и
+          мог пересказать любую из них. Я с огромным удовольствием посещаю нашу
+          библиотеку, где всегда выбираю книги по душе. У меня есть близкий друг
+          Петр, который также интересуется литературой. Мы часто с ним обсуждаем
+          прочитанное произведение.<br />
+
+          Помимо увлечения книгами, я очень люблю помогать своим родным, в
+          особенности сестренке Маше в приготовлении домашнего задания. После
+          школы я стараюсь, и отдохнуть, и в тоже время, прибираюсь дома. И
+          всегда стараюсь поддерживать порядок особенно в своей комнате. В нашей
+          семье все любят животных, и поэтому у нас есть маленький попугайчик
+          Китти и кот Тайсон, который живет с нами уже 7 лет. Наши питомцы
+          дружат друг с другом, а мы все стараемся за ними следить и заботиться.
+          Я каждое утро насыпаю зерно и наливаю свежей воды в клетку к попугаю,
+          а Маша взяла на себя заботу о Тайсоне. Кроме этих занятий я посещаю
+          кружок по информационным технологиям, где учусь составлять различные
+          компьютерные программы.<br />
+
+          Для того, чтобы укрепить свое здоровье, в выходные дни с родителями
+          посещаю бассейн и тренажерный зал. Это помогает мне меньше болеть и
+          быть более выносливым при выполнении физических упражнениях на уроке
+          физкультуры. У меня немного друзей, но те ребята, с которыми я дружу
+          очень верные и надежные. На них можно положиться в любой ситуации, а
+          это очень важно в нашей жизни. В кругу своих одноклассников стараюсь
+          сильно не выделяться и не быть заносчивым, стараюсь решать все споры
+          мирным путем. Надеюсь, что моя порядочность и скромность помогут мне в
+          дальнейшей жизни.<br />
+        </p>
+        <script>
+          let showMore = document.getElementById('show-more')
+          let text = document.getElementById('about-me')
+
+          showMore.addEventListener('click', btnClick)
+
+          function btnClick () {
+            console.log(text.classList)
+
+            if (text.classList.contains('hidden')) {
+              showMore.textContent = 'Кликните сюда, чтобы скрыть подробную информацию обо мне'
+            } else {
+              showMore.textContent = 'Кликните сюда, чтобы узнать меня подробнее'
+            }
+
+            text.classList.toggle('hidden')
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
